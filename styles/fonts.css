@@ -6,37 +6,38 @@
 	src: url('../assets/fonts/SFPRODISPLAYTHINITALIC.otf') format('opentype');
 }
 @font-face {
-	font-family: 'SF Pro Display';
+	font-family: 'SF Pro Display a';
 	font-style: normal;
 	font-weight: 400;
 	font-display: swap;
 	src: url('../assets/fonts/SFPRODISPLAYREGULAR.otf') format('opentype');
 }
 @font-face {
-	font-family: 'SF Pro Display';
+	font-family: 'SF Pro Display b';
 	font-style: normal;
 	font-weight: 500;
 	font-display: swap;
 	src: url('../assets/fonts/SFPRODISPLAYMEDIUM.otf') format('opentype');
 }
 @font-face {
-	font-family: 'SF Pro Display';
+	font-family: 'SF Pro Display c';
 	font-style: normal;
 	font-weight: 600;
 	font-display: swap;
 	src: url('../assets/fonts/SFPRODISPLAYBOLD.otf') format('opentype');
 }
 @font-face {
-	font-family: 'SF Pro Display';
+	font-family: 'SF Pro Display d';
 	font-style: normal;
 	font-weight: 700;
 	font-display: swap;
 	src: url('../assets/fonts/SFPRODISPLAYEXTRABOLD.otf') format('opentype');
 }
 @font-face {
-	font-family: 'SF Pro Display';
+	font-family: 'SF Pro Display e';
 	font-style: normal;
 	font-weight: 800;
 	font-display: swap;
 	src: url('../assets/fonts/SFPRODISPLAYEXTRABOLD.otf') format('opentype');
 }
+

@@ -8,6 +8,8 @@ body {
 	scroll-behavior: smooth;
 	scroll-padding-top: 100px;
 }
+
+
 body {
 	display: flex;
 	flex-direction: column;
@@ -215,7 +217,9 @@ main > section > .container > .title {
 	line-height: 28.8px;
 	text-align: right;
 }
+
 .hero > .title {
+	font-family: 'SF Pro Display c';
 	font-size: 294px;
 	font-weight: 800;
 	line-height: 0.7;
@@ -815,13 +819,16 @@ main > section > .container > .title {
 @media (max-width: 1000px) {
 	/* hero */
 	.hero > .title {
-		font-size: 122px;
+		font-size: 188px;
 		font-weight: 800;
 		line-height: 158.6px;
 		letter-spacing: -0.04em;
 		text-align: center;
 	}
-}
+
+	
+
+	
 
 @media (max-width: 640px) {
 	/* hero */

@@ -1,0 +1,9 @@
+:root {
+	/* Constants */
+	--header-height: 85px;
+	--header-z-index: 100;
+
+	/* Theme colors */
+	--black: #000000;
+	--white: #ffffff;
+}

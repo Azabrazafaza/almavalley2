@@ -14,7 +14,7 @@
 		<header id="main_header" class="main_header_wrapper">
 			<div class="container">
 				<div class="main_header">
-					<img src="./assets/images/logo.svg" alt="logo" />
+					<img class="logo_alma" src="./assets/images/logo.svg" alt="logo" />
 					<nav class="navigation">
 						<ul>
 							<li>
@@ -32,12 +32,28 @@
 						</ul>
 						<div id="line" class="line"></div>
 					</nav>
+
+					<div id="menu-icon" class="menu-icon">
+						<img src="./assets/images/Menu icon.png" alt="Menu" />
+					</div>
+
 					<a class="main_header_link" href="#">
 						<button class="button">Стать партнёром</button>
 					</a>
 				</div>
 			</div>
 		</header>
+
+		<!-- Слайдер меню -->
+		<div id="side-menu" class="side-menu">
+			<button class="close-btn" onclick="closeMenu()">×</button>
+			<ul class="menu-items">
+				<li><a href="#who_we_are">Кто мы</a></li>
+				<li><a href="#ecosystem_union">Экосистема Union</a></li>
+				<li><a href="#innovations">Инновации</a></li>
+				<li><a href="#partners">Партнеры</a></li>
+			</ul>
+		</div>
 
 		<main>
 			<!-- ellipses -->
@@ -73,13 +89,15 @@
 					<h1 class="title">Кто мы</h1>
 					<div class="who_we_are">
 						<h1 class="title">
-							<span> Alma Valley - это сообщество творческих</span>
-							<br />
-							<span>
-								специалистов из разных стран, стремящихся к постоянному
+							<span id="first_title"> Alma Valley - это сообщество <br> 
+								</span>
+
+							<span class="sec_title">
+
+								творческих специалистов из разных стран,  <br>
 							</span>
-							<br />
-							<span>развитию и воплощению новаторских идей в жизнь </span>
+							<span class="third_title"> стремящихся к постоянному развитию и </span> <br> 
+								<span class="fourth_title"> воплощению новаторских идей в жизнь </span>  
 						</h1>
 						<div class="grid">
 							<div class="item item_line">
@@ -93,7 +111,8 @@
 								</div>
 							</div>
 							<div class="item item_description">
-								Мы верим в силу инноваций и совместного творчества, чтобы
+								Мы верим в силу инноваций и 
+								 совместного творчества, чтобы
 								преобразовывать мир вокруг нас
 							</div>
 							<div class="item item_line">
@@ -153,13 +172,13 @@
 			<!-- ecosystem_union -->
 			<section id="ecosystem_union" class="ecosystem_union_section">
 				<div class="container">
-					<h1 class="title">Экосистема Union</h1>
+					<h1 class="title" style="font-size: 13px;">Экосистема Union</h1>
 					<div class="ecosystem_union">
 						<h2 class="title">Union</h2>
 						<p class="description">Одна экосистема на весь процесс обучения</p>
 						<div class="carousel">
 							<div class="header">
-								<h3 class="title">Сервисы<br />экосистемы</h3>
+								<h3 class="title" style="font-size: 13px;">Сервисы<br />экосистемы</h3>
 								<div class="item">
 									<img src="./assets/images/unix.svg" alt="unix" />
 								</div>
@@ -195,7 +214,7 @@
 			<!-- innovations -->
 			<section id="innovations" class="innovations_section">
 				<div class="container">
-					<h1 class="title">Инновационные решения</h1>
+					<h1 class="title">Инновационные <span class="break-point"> решения </span></h1>
 					<div class="innovations">
 						<h1 class="title">
 							Создаем лаборатории для
@@ -329,7 +348,7 @@
 						</h2>
 						<div class="content">
 							<form action="" method="POST">
-								<fieldset>
+								<fieldset class="fieldset">
 									<input
 										class="input"
 										type="text"
@@ -373,9 +392,9 @@
 		<footer class="main_footer_wrapper">
 			<div class="container">
 				<div class="main_footer">
-					<img src="./assets/images/logo.svg" alt="logo" />
-					<p>Алматы, Толе би 59</p>
-					<p>Ceo@almv.kz</p>
+					<img src="./assets/images/logo.svg" alt="logo" class="footer-logo" />
+					<p class="footer-adress">Алматы, Толе би 59</p>
+					<p class="footer-mail">Ceo@almv.kz</p>
 					<div class="links">
 						<a href="#">
 							<img src="./assets/images/instagram_logo.svg" alt="instagram" />
@@ -384,7 +403,7 @@
 							<img src="./assets/images/linkedin_logo.svg" alt="linkedin" />
 						</a>
 					</div>
-					<p>© 2022 AlmaValley. Все права защищены.</p>
+					<p class="footer-rules">© 2022 AlmaValley. Все права защищены.</p>
 				</div>
 			</div>
 		</footer>

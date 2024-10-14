@@ -88,3 +88,15 @@ window.addEventListener('hashchange', () => {
 window.addEventListener('scroll', () => {
 	updateHeader()
 })
+
+const menuIcon = document.getElementById('menu-icon');
+const sideMenu = document.getElementById('side-menu');
+
+menuIcon.addEventListener('click', () => {
+    sideMenu.classList.add('open'); // Открытие меню
+});
+
+function closeMenu() {
+    sideMenu.classList.remove('open'); // Закрытие меню
+}
+

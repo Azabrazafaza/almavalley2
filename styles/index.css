@@ -105,13 +105,20 @@ main > section > .container > .title {
 	z-index: var(--header-z-index);
 	padding: 0 80px;
 	transition: background 0.2s ease-in-out;
-}
-.main_header {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	display: flex;
+	align-items: center;
+  }
+  
+  .main_header {
+	/* display: grid; */
+	/* grid-template-columns: repeat(3, 1fr); */
 	align-items: center;
 	padding: 20px 0;
-}
+	/* margin-left: 300px; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
 .main_header > .navigation {
 	position: relative;
 }
@@ -148,10 +155,14 @@ main > section > .container > .title {
 .main_header_link {
 	justify-self: flex-end;
 }
-.main_header_link > .button {
+.main_header_link>.button {
+	position: fixed;
 	width: fit-content;
 	border: 2px solid rgba(255, 255, 255, 0.2);
 	border-radius: 1000px;
+	right: 50px;
+	top: 21px;
+  
 }
 
 /* hero */
@@ -643,6 +654,113 @@ main > section > .container > .title {
 	}
 }
 
+.menu-icon {
+    position: fixed;
+	right: 50px;
+	top: 19px;
+	display: none;
+	cursor: pointer;
+}
+
+/* Слайдер меню */
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -360px; /* Прячем меню за пределами экрана */
+    width: 360px;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    z-index: 1000;
+    transition: 0.3s; /* Плавное выдвижение меню */
+    padding: 20px;
+	opacity: 95%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.side-menu.open {
+    right: 0; /* Показываем меню */
+}
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+}
+/* Элементы меню */
+.menu-items {
+    list-style: none;
+    padding: 0;
+	margin: 0;
+    display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 32px;
+}
+
+/* .menu-items li {
+    margin: 20px 0;
+} */
+
+.menu-items a {
+	font-family: 'SF Pro Display a';
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+	line-height: 20.8px;
+	position: relative;
+	transition: color 0.3 ease;
+	padding: 10px 0px;
+}
+
+.menu-items a::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%) scaleX(0);
+	width: 52px;
+	height: 2px;
+	background-color: white;
+	transition: transform 0.3 ease;
+	transform-origin: center;
+}
+
+.menu-items a:hover::after{
+	transform: translateX(-50%) scaleX(1);
+
+}
+.menu-items a:hover{
+	color: rgba(255, 255, 255, 0.8);
+}
+
+
+.logo_alma {
+	position: fixed;
+	left: 50px;
+	top: 21px;
+}
+
+
+
+.break-point::before {
+    content: ''; /* Никакого переноса */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'SF Pro Display', sans-serif;
+    overflow-x: hidden; /* Убираем горизонтальный скролл */
+}
+
 @media (max-width: 1600px) {
 	main > section {
 		padding: 40px 40px 100px 40px;
@@ -816,29 +934,639 @@ main > section > .container > .title {
 	}
 }
 
+
 @media (max-width: 1000px) {
+    .break-point::before {
+        content: '\A'; /* Добавляет перенос строки */
+        white-space: pre; /* Учитывает перенос */
+    }
+}
+
+@media (max-width: 1000px) {
+
+
+	/*header*/
+	
+
+
+
 	/* hero */
-	.hero > .title {
+	.hero>.title {
 		font-size: 188px;
 		font-weight: 800;
-		line-height: 158.6px;
+		/* line-height: 158.6px; */
 		letter-spacing: -0.04em;
 		text-align: center;
-	}
-
+		margin-bottom: -11px;
+	  }
 	
+	  .hero>.tags {
+		padding-right: 110px;
+		margin-bottom: 15px;
+	  }
+
+
+	  /*who we are*/
+	  .who_we_are_section > .container {
+		padding: 0px 20px;
+	  }
+
+
+	 .sec_title {
+		position: relative;
+		right: 20px;
+	  }
+	  .third_title{
+		position: relative;
+		right: 50px;
+	  }
+	  .fourth_title {
+		position: relative;
+		right: 80px;
+	  }
+
+	  .who_we_are>.grid {
+		justify-content: flex-end;
+		row-gap: 10px;
+		column-gap: 10px; 
+	  }
+	
+	  .who_we_are>.grid>.item {
+		width: 180px; 
+		height: auto; 
+	  }
+	
+	  .who_we_are>.grid>.item>.content>.row {
+		font-size: 80px; 
+	  }
+	
+	  .who_we_are>.grid>.item>.content>.description {
+		font-size: 14px; 
+	  }
+
+
+
+	  /*ecosystem union*/
+	  .ecosystem_union_section{
+		padding-right: 0px;
+	  }
+	  .ecosystem_union_section > .container {
+		padding-right: 0px;
+		padding-left: 200px;
+	  }
+	  
+	  
+	  .ecosystem_union_section > .container > .title {
+		padding-top: 11px;
+	  }
+
+
+	  /*innovations*/
+
+	  .innovations_section{
+		padding-right: 0px;
+		padding-left: 80px;
+		padding-top: 140px;
+	  }
+
+	  .innovations_section > .container {
+		padding-right: 0px;
+		padding-left: 100px;
+	  }
+	  .innovations{
+		margin-left: 20px;
+	  }
+	  .innovations > .title{
+		font-family: 'SF Pro Display a';
+		font-size: 32px;
+		font-weight: 600px;
+		line-height: 30px;
+	  }
+
+	  .innovations_section > .container > .title {
+		font-size: 14px;
+		font-weight: 400;
+	  }
+
+	  /*partners*/
+
+	  .partners{
+		padding-left: 120px;
+		padding-bottom: 18px;
+	  }
+
+	  .partners > .content{
+		margin-top: 40px;
+		padding-right: 20px;
+		gap: 60px;
+	  }
+
+	  .partners > .content > .item {
+		width: 113px;
+		height: auto;
+	  }
+
+	  .partners_section > .container > .title {
+		padding-top: 5px;
+		font-size: 14px;
+	  }
+
+	  .partners > .title {
+		font-family: 'SF Pro Display a';
+		font-size: 32px;
+		font-weight: 600;
+		line-height: 30px;
+	  }
+
+
+
+	  /*  feedback  */
+
+
+	  .feedback > .title {
+		font-family: 'SF Pro Display a';
+		padding-left: 120px;
+		font-size: 32px;
+		font-weight: 600;
+		line-height: 32px;
+	  }
+
+	  .feedback_section > .container > .description{
+		width: 215px;
+		height: 69px;
+		font-family: 'SF Pro Display a';
+		font-size: 15px;
+		font-weight: 500;
+		line-height: 22.5px;
+    	top: 140px;
+	  }
+
+
+	  .fieldset {
+		padding-left: 120px;
+		width: 540px;
+	  }
+	  .fieldset.input{
+		max-width: 450px;
+		width: 450px;
+		height: 19px;
+	  }
+
+	  .fieldset .input::placeholder {
+		font-size: 15px;
+		font-weight: 400;
+		line-height: 19.5px;
+	  }
+
+	  .fieldset label{
+		padding-top: 20px;
+		width: 414px;
+		height: 40px;
+	  }
+
+	  .fieldset label p{
+		font-size: 13px;
+		font-weight: 500;
+		line-height: 19.5px;
+		font-family: 'SF Pro Display a';
+
+	  }
+
+	  .button{
+		margin-top: 20px;
+		margin-left: 115px;
+	  }
+
+
+
+
+
+
+
+	  /* footer */
+
+	  .footer-logo{
+		display: none;
+	  }
+	  .main_footer_wrapper{
+		padding-left: 40px;
+		padding-right: 40px;
+	  }
+
+	  .main_footer_wrapper > .container {
+		max-width: 100%;
+		padding-left: 0px;
+		padding-right: 0px;
+
+	  }
+
+	  .main_footer{
+		padding-top: 5px;
+	  }
+
+	  .footer-adress{
+		margin-right: 104px;
+		width: 131px;
+		height: 19px;
+		font-family: 'SF Pro Display a';
+		font-size: 15px;
+		font-weight: 400;
+		line-height: 19.5px;
+		white-space: nowrap;
+	  }
+	  .footer-mail{
+		margin-right: 149px;
+		font-family: 'SF Pro Display a';
+		font-size: 15px;
+		font-weight: 400;
+		line-height: 19.5px;
+		white-space: nowrap;
+		width: 86px;
+		height: 19px;
+	  }
+
+	  .footer-rules{
+		font-family: 'SF Pro Display a';
+    	font-size: 14px; /* Размер текста */
+		font-weight: 500; /* Толщина текста */
+		line-height: 21px; /* Высота строки для правильного интервала */
+		color: rgba(255, 255, 255, 0.4); /* Прозрачный белый цвет */
+		text-align: right; /* Выравнивание текста по правому краю */
+		width: 215px; /* Устанавливаем ширину, как на макете */
+		margin-left: auto; /* Отодвигаем вправо, если в контейнере */
+		margin-top: 10px; /* Отступ сверху */
+	  }
+
+	  .main_footer > .links{
+		margin-right: 167px;
+		display: flex;
+		flex-direction: row;
+		gap: 20px;
+		justify-content: center;
+		align-items: center;
+	  }
+	  
+	  .main_footer > .links a img{
+		width: 26px;
+		height: 26px;
+	  }
+	  
+	  
+	  
+
+}
 
 	
 
 @media (max-width: 640px) {
+	html, body {
+		margin: 0;
+		padding: 0;
+		overflow-x: hidden; /* Прячем горизонтальный скролл */
+		width: 100%; /* Занимаем всю ширину экрана */
+	}
+
+	/* header */
+	.main_header_wrapper{
+
+	}
+	.logo_alma{
+		width: 120px;
+		height: 29.71px;
+		top: 16px;
+		left: 20px;
+	}
+	.navigation {
+		display: none;
+	}
+	.main_header_link > .button {
+		width: 143px;
+		height: 30px;
+		font-size: 14px;
+		font-weight: 500;
+		line-height: 18.2px;
+		white-space: nowrap;
+		margin-top: 0px;
+		margin-left: 80px;
+		margin-right: 20px;
+	}
+	.menu-icon {
+        display: block; /* Показываем иконку меню */
+        top: 23px;
+        right: 24px;
+        width: 24px;
+        height: 24px;
+        cursor: pointer; /* Изменяем курсор на указатель */
+    }
+	
+
 	/* hero */
+
+
 	.hero > .title {
-		font-size: 69px;
+		font-family: 'SF Pro Display c';
+		font-size: 122px;
 		font-weight: 800;
-		line-height: 89.7px;
+		line-height: 158.6px;
 		letter-spacing: -0.04em;
 		text-align: center;
+		top: 270px;
+		left: 21px;
 	}
+	.hero > .description{
+		padding-left: 0;
+		margin-left: 0;
+		margin-bottom: 0px;
+		font-weight: 300;
+		font-size: 18px;
+		line-height: 21.6px;
+		font-family: 'SF Pro Display a';
+		top: 202px;
+		left: -20px;
+		position: absolute;
+
+	} 
+
+	.hero > .tags {
+		padding-right: 0px;
+		margin-top: 0px;
+		margin-bottom: 20px;
+		font-size: 12px ;
+		font-weight: 400 ;
+		line-height: 15.6px ;
+		font-family: 'SF Pro Display a';
+	}
+
+
+	/* who we are */
+
+	.who_we_are_section{
+		padding-bottom: 0px;
+		padding-left: 20px;
+	}
+
+	.who_we_are_section > .container > .title{
+		width: 45px;
+		height: 16px;
+		font-weight: 400;
+		font-size: 12px;
+		line-height: 15.6px;
+	}
+
+	.who_we_are > .title {
+		width: 340px;
+		height: 144px;
+		font-size: 24px;
+		font-weight: 600;
+		line-height: 24px;
+		text-align: left;
+	}
+
+	.sec_title {
+		padding-left: 20px;
+	}
+	.third_title{
+		padding-left: 50px;
+	}
+	.fourth_title{
+		padding-left: 80px;
+	}
+
+	.grid{
+		padding-top: 20px;
+	}
+	.item.item_description{
+		left: -40px;
+		padding-top: 20px;
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 21px;
+	}
+
+	.grid .item_line:nth-of-type(4){
+		right: 170px;
+		position: relative;
+	}
+	.grid .item_line:nth-of-type(5){
+		right: 190px;
+		position: relative;
+	}
+	.grid .item_line:nth-of-type(6){
+		bottom: 150px;
+		position: relative;
+	}
+
+
+	/* ecosystem union */
+
+
+	.ecosystem_union_section{
+		padding: 0 20px;
+	}
+	.ecosystem_union_section > .container {
+		padding-left: 160px;
+	}
+
+	.ecosystem_union_section > .container > .title{
+		font-size: 12px;
+		font-weight: 400;
+		line-height: 15.6px;
+		width: 120px;
+		height: 16px;
+		padding-left: 0px;
+	}
+	.ecosystem_union > .title{
+		width: 257px;
+		height: 80px;
+		font-size: 80px;
+		font-weight: 800;
+		bottom: 20px;
+		padding-left: 50px;
+		position: relative;
+	}
+
+	.ecosystem_union > .description {
+		padding-left: 20px;
+		width: 309px;
+		height: 19px;
+		white-space: nowrap;
+		font-size: 16px;
+		font-weight: 300;
+		padding-bottom: 30px;
+		padding-left: 50px;
+	}
+	.ecosystem_union > .carousel > .header{
+		padding-left: 50px;
+	}
+	.ecosystem_union > .carousel > .header > .title {
+		width: 139px;
+		height: 17px;
+		white-space: nowrap;
+		bottom: 100px;
+	}
+	.ecosystem_union > .carousel > .header > .item {
+		width: 72.2px;
+		height: 46px;
+	}
+	.ecosystem_union > .carousel > .header > .item img{
+		width: 55.8px;
+		height: 17.86px;
+	}
+	.ecosystem_union > .carousel > .header > .item:nth-of-type(1) img{
+		color: white;
+		opacity: 100%;
+	}
+	.carousel > .content > .item img {
+		width: 470px;
+		height: 354px;
+		right: 20px;
+		padding-right: 5px;
+		
+	}
+	.carousel > .content > .description {
+		width: 393px;
+		height: 80px;
+		font-size: 13px;
+		font-weight: 600;
+		line-height: 19.5px;
+		font-family: 'SF Pro Text';
+	}
+
+
+	/* innovations */
+
+
+
+	.innovations_section{
+		padding-top: 10px;
+		padding-left: 20px;
+	}
+	.innovations_section > .container {
+		display: block;
+		padding-left: 120px;
+	}
+
+	.innovations_section > .container > .title {
+		width: 169;
+		height: 16;
+		font-weight: 400;
+		font-size: 12px;
+		line-height: 15.6px;
+		white-space: nowrap !important;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	.innovations > .title {
+		width: 393px;
+		height: 48px;
+		font-weight: 600;
+		font-size: 24px;
+		line-height: 24px;
+		padding-left: 25px;
+	}
+
+	.innovations > .content > .collapse {
+		width: 393px;
+		height: 504px;
+		margin-left: 25px;
+	}
+
+	.collapse > .item > .content > .item:nth-of-type(1) > .description {
+		width: 233px;
+		height: 43px;
+		font-size: 500;
+		font-weight: 13px ;
+		line-height: 19.5px;
+		padding-right: 10px;
+		margin-right: 10px;
+		padding-right: 20px;
+	}
+
+
+
+
+
+
+	/* partners  */
+
+
+
+	.partners_section{
+		padding-left: 20px;
+		padding-top: 0px;
+	}
+	.partners_section > .container {
+		padding-right: 0px;
+		padding-left: 165px;
+	}
+	.partners_section > .container > .title{
+		width: 63px ;
+		height: 16px ;
+		font-size: 12px ;
+		font-weight: 400;
+		line-height: 15.6px;
+	}
+	.partners {
+		margin-left: 65px;
+		padding-left: 0px;
+		gap: 24px;
+	}
+
+	.partners > .title{
+		padding-bottom: 24px;
+		width: 340px;
+		height: 48px;
+		font-weight: 600;
+		font-size: 24px;
+		line-height: 24px;
+
+	}
+	.partners > .content{
+		margin-top: 0px;
+		gap: 32px;
+	}
+	.partners > .content > .item img{
+		width: 90.6px;
+		height: 89.98px;
+	}
+
+
+
+	/*  feedback  */
+
+	.feedback_section{
+		padding-left: 20px;
+	}
+	.feedback_section > .container > .title {
+		width: 101px;
+		height: 16px;
+		font-size: 12px;
+		font-weight: 400;
+		line-height: 15.6px;
+	}
+	.feedback > .title {
+		width: 393px;
+		height: 96px;
+		font-size: 24px;
+		font-weight: 600;
+		line-height: 24px;
+		padding-left: 85px;
+		width: 100%;
+		padding-bottom: 5px;
+
+	}
+
+	.feedback_section > .container > .description{
+		width: 187px;
+		height: 90px;
+		font-weight: 500;
+		font-size: 13px;
+		line-height: 19.5px;
+		/* width: 100%; */
+		padding-right: 20px;
+	}
+
 }
 
 @media (max-width: 1920px) {
